@@ -1,0 +1,261 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>PVM App</title>
+
+ 	<!--<link rel="stylesheet" href="css/tema_AppFInal1.min.css" />-->
+  <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+  <link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+  <link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css">
+	
+</head> 
+<body> 
+
+<!--Página de Inicio-->
+<div data-role="page" id="home">
+  <!-- Ejemplo de clase para color -->
+      <div data-role="header" class="dark-primary-color">
+        <h1>Inicio</h1>
+      </div>
+      <div data-role="content">
+      <center>
+      <table width="534" border="0">
+  		<tr align="center">
+  			<td width="194" align="center"><a href="#Inventario"><img src="images/img2.png" width="150" height="150"></a></td>
+  		</tr>
+  		<tr align="center">
+    		<td><h4> Ferreteria</h4></td>
+  		</tr>
+        <tr>
+    		<td width="261" align="center"><a href="#Herramientas"><img src="images/img1.png" width="150" height="150"></a></td>
+  		</tr>
+  		<tr>
+  			<td align="center"><h4>Herramientas y Escaleras</h4></td>
+  		</tr>
+  	  </table>
+	</center>
+      </div>
+     	<!--Footer-->
+	 <div data-role="footer" data-position="fixed" data-id="footer">
+ 	 <div data-role="navbar">
+        <ul>
+          <li><a href="#dialog" data-role="button" data-icon="info">Info</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+<!--Herramientas y Materiales-->
+
+<div data-role="page" id="Inventario">
+	<div data-role="header">
+		<h1>Inventario de Ferreteria</h1>
+	</div>
+	<div data-role="content">	
+		  <div class="form" name="frm_AgregarServicio" id="frm_AgregarServicio">
+         
+         <center>
+      </center> 
+       <!--ID-->
+          <label for="txt_ID">ID:</label>
+          <input type="text" name="txt_ID" id="txt_ID" required>
+      <!--Nombre-->
+          <label for="txt_Nombre">Nombre:</label>
+          <input type="text" name="txt_Nombre" id="txt_Nombre" required>
+      <!--Material-->
+          <label for="txt_Material">Material:</label>
+          <input type="text" name="txt_Material" id="txt_Material" required>
+      <!--Categoria-->
+          <label for="txt_Categoria">Categoria:</label>
+          <select name="Categoria">
+          	<option value="1">Plomeria</option>
+    		<option value="2">Electricidad</option>
+    		<option value="3">Tablarroca</option>
+            <option value="4">Albañileria</option>
+            <option value="5">Herreria</option>
+            <option value="6">Carpinteria</option>
+            <option value="7">Otros</option>
+          </select>
+      <!--Medida -->
+          <label for="txt_Medida">Medida:</label>
+          <input type="text" name="txt_Medida" id="txt_Medida"></textarea>
+	  <!--Cantidad-->
+	   	  <label for="txt_Cantidad">Cantidad:</label>
+          <input type="text" name="txt_Cantidad" id="txt_Cantidad" value="" required>
+          
+	  <!--Guardar-->
+				 <input type="button" value="Agregar" id="btn_Agregar" name="btn_Agregar"/ >
+
+      </div>	
+	</div>
+	<!--Footer-->
+	 <div data-role="footer" data-position="fixed" data-id="footer">
+ 	 <div data-role="navbar">
+        <ul>
+          <li><a href="javascript:window.history.back();" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+		      <li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+          <li><a href="#dialog" data-role="button" data-icon="info">Info</a></li>
+          <li><a href="#infoServicio" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+
+<!--Información del Servicio-->
+
+<div data-role="page" id="infoServicio">
+	<div data-role="header">
+		<h1>Información del Servicio</h1>
+	</div>
+	<div data-role="content">
+	  <div id="contenedor_Servicio">
+    </div>
+
+
+			
+	</div>
+	<!--Footer-->
+	 <div data-role="footer" data-position="fixed" data-id="footer">
+ 	 <div data-role="navbar">
+        <ul>
+          <li><a href="javascript:window.history.back();" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+		  <li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+          <li><a href="#dialog" data-role="button" data-icon="info">Info</a></li>
+          <li><a href="#EditarServicio" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+
+<div data-role="page" id="Herramientas">
+	<div data-role="header">
+		<h1>Editar Servicio</h1>
+	</div>
+	<div data-role="content" id="cont_EditarServicio">	
+    <div class="form" name="frm_EditarServicio" id="frm_EditarServicio">
+      
+      <center>
+      </center> 
+       <!--ID-->
+          <label for="txt_EditarID">ID:</label>
+          <input type="text" name="txt_EditarID" id="txt_EditarID" required readonly>
+      <!--Nombre-->
+          <label for="txt_EditarNombre">Nombre:</label>
+          <input type="text" name="txt_EditarNombre" id="txt_EditarNombre" required>
+      <!--Descripción-->
+          <label for="txt_EditarDescripcion">Descripción:</label>
+          <textarea cols="20" rows="4" name="txt_EditarDescripcion" id="txt_EditarDescripcion" required></textarea>
+      <!--e-mail -->
+          <label for="txt_EditarMail">Correo:</label>
+          <input type="email" name="txt_EditarMail" id="txt_EditarMail" value="" required>
+      <!--Domicilio -->
+          <label for="txt_EditarDomicilio">Domicilio:</label>
+          <textarea cols="40" rows="8" name="txt_EditarDomicilio" id="txt_EditarDomicilio"></textarea>
+	  <!--Categoria-->
+	   	  <label for="txt_EditarCategoria">Categoría:</label>
+          <input type="text" name="txt_EditarCategoria" id="txt_EditarCategoria" value="" required>
+	  <!--Nota -->
+          <label for="txt_EditarNota">Nota:</label>
+          <textarea cols="40" rows="8" name="txt_EditarNota" id="txt_EditarNota" required ></textarea>
+ 
+		<!--Guardar-->
+				 <input type="button" value="Editar" id="btn_EditarServicio" name="btn_EditarServicio"/ >
+         <input type="button" value="Eliminar" class="delete" id="btn_EliminarServicio" name="btn_EliminarServicio"/ >
+
+      </div>	
+	
+				
+	</div>
+	<!--Footer-->
+	 <div data-role="footer" data-position="fixed" data-id="footer">
+ 	 <div data-role="navbar">
+        <ul>
+          <li><a href="javascript:window.history.back();" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+		  <li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+          <li><a href="#dialog" data-role="button" data-icon="info">Info</a></li>
+          <li><a href="#pag_Acerca" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+<!--Acerca de Mí-->
+<div data-role="page" id="pag_Acerca">
+  <div data-role="header">
+    <h1>Acerca de mí</h1>
+  </div><br>
+    <div  style="text-align: center;">
+    <img src="images/1.JPG" width="200" height="200">
+    </div>
+  <div data-role="content"> Datos Personales.
+    <div data-role="fieldcontain">
+        <label for="textarea">Nombre:</label>
+        Juan Francisco Gómez Rodríguez
+        </div>
+      <div data-role="fieldcontain">
+        <label for="textarea">Carrera:</label>
+        Licenciatura en Ingeniería en Sistemas de Información
+        </div>
+        <div data-role="fieldcontain">
+        <label for="textarea">Materia:</label>
+        Desarrollo de Aplicaciones para Comercio Electronico
+        </div>
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+              <legend>Selecciona el Monto</legend>
+              <input type="radio" name="monto" id="monto_0" value="" />
+              <label for="monto_0">$50.00</label>
+              <input type="radio" name="monto" id="monto_1" value="" />
+              <label for="monto_1">$100.00</label>
+              <input type="radio" name="monto" id="monto_2" value="" />
+              <label for="monto_2">$200.00</label>
+          </fieldset>
+        </div>
+        <a href="#" data-role="button">Donar</a>
+    </div>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+        <ul>
+            <li><a href="javascript:window.history.back();" data-role="button" data-icon="arrow-l">Atrás</a></li>
+            <li><a href="#home" data-role="button" data-icon="home">Home</a></li>
+            <li><a href="#dialog" data-role="button" data-icon="info">Info</a></li>
+            <li><a href="#home" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+  <!--Footer-->
+	 <div data-role="footer" data-position="fixed" data-id="footer">
+ 	 <div data-role="navbar">
+        <ul>
+          <li><a href="javascript:window.history.back();" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+		      <li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+          <li><a href="#dialog" data-role="button" data-icon="info">Info</a></li>
+          <li><a href="#JQueryMobile" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+<!--Info Dialog-->
+<div data-role="dialog" id="dialog">
+  <div data-role="header">
+      <h1>Info</h1>
+    </div>
+    <div data-role="content">
+		<p>Aplicación creada con JQuery Mobile y PhoneGap, mediante Dreamweaver CS6 y Sublime Text</p>
+		<p>Francisco Gomez/ Mayo de 2017</p>
+		<a href="#home" data-role="button" >Cerrar</a>
+    </div>
+</div>
+
+
+
+
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+
+<script src="js/functions/main.js"></script>
+
+
+
+</body>
+</html>
